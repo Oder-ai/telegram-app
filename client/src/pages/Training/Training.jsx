@@ -1,13 +1,13 @@
 import React from 'react';
 import {useContext, useEffect, useState} from 'react';
 import Navigation from "../../components/ui/GlobalUI/Navigation/Navigation";
-import Wrapper from "../../components/utils/Wrapper/Wrapper";
+import Page from "../../components/wrappers/Page/Page";
 import TrainingList from "../../components/ui/TrainingUI/TrainingList/TrainingList";
 import {Context} from "../../utils/context";
 import TrainingItem from "../../components/ui/TrainingUI/TrainingItem/TrainingItem";
 import {observer} from "mobx-react-lite";
 import useModal from "../../hooks/useModal";
-import Modal from "../../components/ui/ModalUI/Modal/Modal";
+import Popup from "../../components/ui/ModalUI/Popup/Popup";
 import Dragger from "../../components/ui/ModalUI/Dragger/Dragger";
 import ModalHeader from "../../components/ui/ModalUI/ModalHeader/ModalHeader";
 import LockIcon from "../../components/icons/LockIcon/LockIcon";
@@ -31,12 +31,12 @@ const Training = () => {
     }, [])
 
     return (
-        <Wrapper>
+        <Page>
             <Loader
                 isLoading={isLoading}
             />
 
-            <Modal isActive={modalActive} modalHide={modalHide}>
+            <Popup isActive={modalActive} modalHide={modalHide}>
                 <Dragger/>
                 <span className="modal-header-wrap">
                     <ModalHeader>
@@ -53,7 +53,7 @@ const Training = () => {
                 >
                     Перейти к оплате
                 </a>
-            </Modal>
+            </Popup>
 
             <Navigation>
                 Обучение
@@ -73,7 +73,7 @@ const Training = () => {
                     )
                 })}
             </TrainingList>
-        </Wrapper>
+        </Page>
     );
 };
 

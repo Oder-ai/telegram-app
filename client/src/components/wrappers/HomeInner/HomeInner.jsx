@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WrapperHome = ({children}) => {
+const HomeInner = ({children}) => {
     return (
         <main className="main">
             <div className="main-inner">
@@ -10,4 +10,4 @@ const WrapperHome = ({children}) => {
     );
 };
 
-export default WrapperHome;
+export default HomeInner;

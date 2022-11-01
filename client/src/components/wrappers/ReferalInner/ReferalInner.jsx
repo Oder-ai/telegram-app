@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WrapperReferal = ({children}) => {
+const ReferalInner = ({children}) => {
     return (
         <main className="referal">
             {children}
@@ -8,4 +8,4 @@ const WrapperReferal = ({children}) => {
     );
 };
 
-export default WrapperReferal;
+export default ReferalInner;

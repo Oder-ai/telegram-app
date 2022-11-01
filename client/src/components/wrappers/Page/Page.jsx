@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Wrap = ({children, ...props}) => {
+const Page = ({children}) => {
     return (
-        <div {...props}>
+        <div className="page">
             {children}
         </div>
     );
 };
 
-export default Wrap;
+export default Page;

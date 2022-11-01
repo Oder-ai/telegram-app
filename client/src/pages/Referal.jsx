@@ -1,5 +1,5 @@
 import React from 'react';
-import Wrapper from "../components/utils/Wrapper/Wrapper";
+import Page from "../components/wrappers/Page/Page";
 import Navigation from "../components/ui/GlobalUI/Navigation/Navigation";
 import {useContext, useEffect, useState} from "react";
 import {Context} from "../utils/context";
@@ -11,9 +11,9 @@ import CopyIcon from "../components/icons/CopyIcon/CopyIcon";
 import {CopyToClipboard} from "react-copy-to-clipboard/src";
 import Copied from "../components/ui/ReferalUI/Copied/Copied";
 import CopyButton from "../components/ui/ReferalUI/CopyButton/CopyButton";
-import WrapperReferal from "../components/utils/WrapperReferal/WrapperReferal";
+import ReferalInner from "../components/wrappers/ReferalInner/ReferalInner";
 import ReferalBalance from "../components/ui/ReferalUI/ReferalBalance/ReferalBalance";
-import Wrap from "../components/utils/Wrap/Wrap";
+import Wrapper from "../components/wrappers/Wrapper/Wrapper";
 import ReferalDescription from "../components/ui/ReferalUI/ReferalDescription/ReferalDescription";
 import Text from "../components/ui/GlobalUI/Text/Text";
 import Button from "../components/ui/GlobalUI/Button/Button";
@@ -39,7 +39,7 @@ const Referal = () => {
     }, [])
 
     return (
-        <Wrapper>
+        <Page>
             <Loader
                 isLoading={isLoading}
             />
@@ -48,8 +48,8 @@ const Referal = () => {
                 Обучение
             </Navigation>
 
-            <WrapperReferal>
-                <Wrap className="content">
+            <ReferalInner>
+                <Wrapper className="content">
                     <ReferalBalance
                         balance={Referal.referalBalance}
                         title="Баланс"
@@ -62,8 +62,8 @@ const Referal = () => {
                         программы рекламирует продукт
                         и&nbsp;получает за&nbsp;это вознаграждение
                     </ReferalDescription>
-                </Wrap>
-                <Wrap className="share-wrap">
+                </Wrapper>
+                <Wrapper className="share-wrap">
                     <CopyButton onCopy={onCopyHandler} text={Referal.referalLink}>
                         <Copied isCopied={copied}>Скопировано</Copied>
 
@@ -78,9 +78,9 @@ const Referal = () => {
                             Поделиться ссылкой
                         </span>
                     </Button>
-                </Wrap>
-            </WrapperReferal>
-        </Wrapper>
+                </Wrapper>
+            </ReferalInner>
+        </Page>
     );
 };
 

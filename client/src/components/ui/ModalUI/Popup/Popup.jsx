@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import LockIcon from "../../../icons/LockIcon/LockIcon";
 
-const Modal = ({children, isActive, modalHide}) => {
+const Popup = ({children, isActive, modalHide}) => {
     return (
         <div className={isActive ? 'modal active' : 'modal'}>
             <div className="modal-background" onClick={modalHide}></div>
@@ -13,4 +13,4 @@ const Modal = ({children, isActive, modalHide}) => {
     );
 };
 
-export default Modal;
+export default Popup;

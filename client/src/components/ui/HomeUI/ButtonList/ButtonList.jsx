@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import {LINK_CALCULATOR, LINK_REFERAL, LINK_TRAININGS} from "../../../../router";
-import Wrap from "../../../utils/Wrap/Wrap";
+import Wrapper from "../../../wrappers/Wrapper/Wrapper";
 import P2PIcon from "../../../icons/P2PIcon/P2PIcon";
 import SectionHeader from "../../GlobalUI/SectionHeader/SectionHeader";
 import Text from "../../GlobalUI/Text/Text";
@@ -13,24 +13,24 @@ const ButtonList = ({modalShow}) => {
     const {User} = useContext(Context);
 
     return (
-        <Wrap className="button-group">
+        <Wrapper className="button-group">
             <Link
                 to={User.user.allowed_training ? LINK_TRAININGS : ''}
                 onClick={User.user.allowed_training && modalShow}
                 className="button"
                 id="training"
             >
-                <Wrap className="training-wrap main_training-wrap">
+                <Wrapper className="training-wrap main_training-wrap">
                     <P2PIcon/>
                     <SectionHeader className="button-header button-header_training">
                         Обучение
                     </SectionHeader>
-                </Wrap>
+                </Wrapper>
                 <Text type="medium" className="training-content">
                     {User.user.training_description}
                 </Text>
 
-                <Wrap className="calculator-bg"/>
+                <Wrapper className="calculator-bg"/>
             </Link>
             <Link
                 to={User.user.allowed_calculator ? LINK_CALCULATOR : ''}
@@ -49,11 +49,11 @@ const ButtonList = ({modalShow}) => {
             </Link>
             <Link to={LINK_REFERAL} className="button" id="ref">
                 Реферальная система
-                <Wrap className="bubble-wrap bubble-wrap_main arrow-wrap">
+                <Wrapper className="bubble-wrap bubble-wrap_main arrow-wrap">
                     <ArrowIcon/>
-                </Wrap>
+                </Wrapper>
             </Link>
-        </Wrap>
+        </Wrapper>
     );
 };
 

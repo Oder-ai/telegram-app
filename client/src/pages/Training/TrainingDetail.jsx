@@ -5,7 +5,7 @@ import Loader from "../../components/ui/GlobalUI/Loader/Loader";
 import {useContext, useEffect, useState} from "react";
 import {Context} from "../../utils/context";
 import useModal from "../../hooks/useModal";
-import Wrap from "../../components/utils/Wrap/Wrap";
+import Wrapper from "../../components/wrappers/Wrapper/Wrapper";
 import Text from "../../components/ui/GlobalUI/Text/Text";
 import Player from "../../components/ui/GlobalUI/Player/Player";
 
@@ -32,11 +32,11 @@ const TrainingDetail = () => {
                 Обучение
             </Navigation>
 
-            <Wrap className="article">
+            <Wrapper className="article">
                 <h1 className="button-header article_button-header" id="article-title">
                     {Trainings.training.title}
                 </h1>
-                <Wrap className="training-image-wrap article_image-wrap">
+                <Wrapper className="training-image-wrap article_image-wrap">
                     {Trainings.training.image_url &&
                          <img
                             className="training-image" id="article-image"
@@ -49,16 +49,16 @@ const TrainingDetail = () => {
                     {Trainings.training.video_url &&
                         <Player video={Trainings.training.video_url}/>
                     }
-                </Wrap>
-                <Wrap className="article-content">
+                </Wrapper>
+                <Wrapper className="article-content">
                     <Text type="medium" overrideClass="article_medium" id="article-bold">
                         {Trainings.training.bold_text}
                     </Text>
                     <Text type="medium" overrideClass="text article_text" id="article-content">
                         {Trainings.training.main_text}
                     </Text>
-                </Wrap>
-            </Wrap>
+                </Wrapper>
+            </Wrapper>
         </div>
     );
 };

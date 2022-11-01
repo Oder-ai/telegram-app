@@ -5,15 +5,15 @@ import ModalHeader from "../../ModalUI/ModalHeader/ModalHeader";
 import LockIcon from "../../../icons/LockIcon/LockIcon";
 import ModalText from "../../ModalUI/ModalText/ModalText";
 import {Link} from "react-router-dom";
-import Modal from "../../ModalUI/Modal/Modal";
+import Popup from "../../ModalUI/Popup/Popup";
 import {useContext} from "react";
 import {Context} from "../../../../utils/context";
 
-const ModalHome = ({modalActive, modalHide}) => {
+const PopupHome = ({modalActive, modalHide}) => {
     const {User} = useContext(Context);
 
     return (
-        <Modal isActive={modalActive} modalHide={modalHide}>
+        <Popup isActive={modalActive} modalHide={modalHide}>
             <Dragger/>
             <Text type="medium" className="modal-header-wrap">
                 <ModalHeader>
@@ -30,8 +30,8 @@ const ModalHome = ({modalActive, modalHide}) => {
             >
                 Перейти к оплате
             </Link>
-        </Modal>
+        </Popup>
     );
 };
 
-export default ModalHome;
+export default PopupHome;

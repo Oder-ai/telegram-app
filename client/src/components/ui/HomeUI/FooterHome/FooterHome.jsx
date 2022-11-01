@@ -1,7 +1,7 @@
 import React from 'react';
 import Text from "../../GlobalUI/Text/Text";
 import LinkTG from "../../GlobalUI/LinkTG/LinkTG";
-import Wrap from "../../../utils/Wrap/Wrap";
+import Wrapper from "../../../wrappers/Wrapper/Wrapper";
 import TelegramIcon from "../../../icons/TelegramIcon/TelegramIcon";
 import Footer from "../../GlobalUI/Footer/Footer";
 import {useContext} from "react";
@@ -23,9 +23,9 @@ const FooterHome = () => {
                 >
                     Напишите нам
                 </LinkTG>
-                <Wrap className="telegram-icon-wrap">
+                <Wrapper className="telegram-icon-wrap">
                     <TelegramIcon/>
-                </Wrap>
+                </Wrapper>
             </Text>
         </Footer>
     );

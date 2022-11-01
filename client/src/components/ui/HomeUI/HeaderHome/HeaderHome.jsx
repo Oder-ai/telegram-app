@@ -1,5 +1,5 @@
 import React from 'react';
-import Wrap from "../../../utils/Wrap/Wrap";
+import Wrapper from "../../../wrappers/Wrapper/Wrapper";
 import Text from "../../GlobalUI/Text/Text";
 import Avatar from "../../GlobalUI/Avatar/Avatar";
 import LinkTG from "../../GlobalUI/LinkTG/LinkTG";
@@ -13,10 +13,10 @@ const HeaderHome = () => {
 
     return (
         <Header>
-            <Wrap className="user-info">
+            <Wrapper className="user-info">
                 <Text type="medium" id="username">Username</Text>
                 <Avatar source={User.avatar}/>
-            </Wrap>
+            </Wrapper>
             <LinkTG source={User.technical_support_link} id="settings-bubble">
                 <QuestionIcon/>
             </LinkTG>

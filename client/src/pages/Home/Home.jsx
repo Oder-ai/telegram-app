@@ -10,7 +10,7 @@ import TelegramIcon from "../../components/icons/TelegramIcon/TelegramIcon";
 import LockIcon from "../../components/icons/LockIcon/LockIcon";
 import {observer} from "mobx-react-lite";
 import {toJS} from "mobx";
-import Modal from "../../components/ui/ModalUI/Modal/Modal";
+import Popup from "../../components/ui/ModalUI/Popup/Popup";
 import Dragger from "../../components/ui/ModalUI/Dragger/Dragger";
 import ModalHeader from "../../components/ui/ModalUI/ModalHeader/ModalHeader";
 import ModalText from "../../components/ui/ModalUI/ModalText/ModalText";
@@ -18,13 +18,13 @@ import {LINK_CALCULATOR, LINK_REFERAL, LINK_TRAININGS} from "../../router";
 import useModal from "../../hooks/useModal";
 import useTimeout from "../../hooks/useTimeout";
 import useLoading from "../../hooks/useLoad";
-import Wrapper from "../../components/utils/Wrapper/Wrapper";
+import Page from "../../components/wrappers/Page/Page";
 import SectionHeader from "../../components/ui/GlobalUI/SectionHeader/SectionHeader";
 import Loader from "../../components/ui/GlobalUI/Loader/Loader";
-import WrapperHome from "../../components/utils/WrapperHome/WrapperHome";
+import HomeInner from "../../components/wrappers/HomeInner/HomeInner";
 import Text from "../../components/ui/GlobalUI/Text/Text";
 import Avatar from "../../components/ui/GlobalUI/Avatar/Avatar";
-import Wrap from "../../components/utils/Wrap/Wrap";
+import Wrapper from "../../components/wrappers/Wrapper/Wrapper";
 import LinkTG from "../../components/ui/GlobalUI/LinkTG/LinkTG";
 import ButtonList from "../../components/ui/HomeUI/ButtonList/ButtonList";
 import Header from "../../components/ui/GlobalUI/Header/Header";
@@ -32,7 +32,7 @@ import HeaderHome from "../../components/ui/HomeUI/HeaderHome/HeaderHome";
 import Subscribtion from "../../components/ui/HomeUI/Subscribtion/Subscribtion";
 import Footer from "../../components/ui/GlobalUI/Footer/Footer";
 import FooterHome from "../../components/ui/HomeUI/FooterHome/FooterHome";
-import ModalHome from "../../components/ui/HomeUI/ModalHome/ModalHome";
+import PopupHome from "../../components/ui/HomeUI/PopupHome/PopupHome";
 
 const Home = () => {
     const {User} = useContext(Context);
@@ -51,17 +51,17 @@ const Home = () => {
     }, [])
 
     return (
-        <Wrapper>
+        <Page>
             <Loader
                 isLoading={isLoading}
             />
 
-            <ModalHome
+            <PopupHome
                 modalActive={modalActive}
                 modalHide={modalHide}
             />
 
-            <WrapperHome>
+            <HomeInner>
                 <HeaderHome/>
 
                 <ButtonList
@@ -74,8 +74,8 @@ const Home = () => {
                 />
 
                 <FooterHome/>
-            </WrapperHome>
-        </Wrapper>
+            </HomeInner>
+        </Page>
     );
 };
 
